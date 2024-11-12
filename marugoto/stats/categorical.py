@@ -2,10 +2,10 @@
 """Calculate statistics for deployments on categorical targets."""
 
 from pathlib import Path
-import pandas as pd
-from sklearn import metrics
-import scipy.stats as st
 
+import pandas as pd
+import scipy.stats as st
+from sklearn import metrics
 
 __author__ = "Marko van Treeck"
 __copyright__ = "Copyright 2022, Kather Lab"
@@ -108,6 +108,7 @@ def categorical_aggregated_(*preds_csvs: str, outpath: str, target_label: str) -
 
 if __name__ == "__main__":
     from warnings import warn
+
     from fire import Fire
 
     warn(

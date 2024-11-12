@@ -1,12 +1,11 @@
 # %%
 from collections import namedtuple
-from typing import Iterable, Sequence, Optional, Tuple
+from typing import Iterable, Optional, Sequence, Tuple
 
 import numpy as np
 import scipy.stats as st
 from matplotlib import pyplot as plt
-from sklearn.metrics import precision_recall_curve, average_precision_score
-
+from sklearn.metrics import average_precision_score, precision_recall_curve
 
 all = [
     "plot_precision_recall_curve",
@@ -118,8 +117,9 @@ def plot_precision_recall_curves_(
         true_label:  The positive class for the precision-recall.
         outpath:  Path to save the `.svg` to.
     """
-    import pandas as pd
     from pathlib import Path
+
+    import pandas as pd
 
     outpath = Path(outpath)
     outpath.mkdir(parents=True, exist_ok=True)

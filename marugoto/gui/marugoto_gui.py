@@ -4,6 +4,8 @@ __author__ = "Gregory Veldhuizen"
 __copyright__ = "Copyright 2022, Kather Lab"
 __maintainer__ = "Gregory Veldhuizen"
 
+import os
+import subprocess
 from cgi import test
 from cgitb import text
 from doctest import script_from_examples
@@ -13,9 +15,8 @@ from string import whitespace
 from tkinter import *
 from tkinter.filedialog import askdirectory, askopenfile, askopenfilename
 from tkinter.tix import COLUMN
+
 import pandas as pd
-import subprocess
-import os
 
 # this is to open the programme
 root = Tk()

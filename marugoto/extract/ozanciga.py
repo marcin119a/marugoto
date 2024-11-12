@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 import hashlib
-import torchvision
+
 import torch
+import torchvision
 from fire import Fire
+
 from .extract import extract_features_
 
 # use like this:

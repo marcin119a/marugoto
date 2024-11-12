@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 
-from collections import namedtuple
-from typing import Iterable, Sequence, Optional, Tuple, Mapping, List
-from pathlib import Path
 import argparse
+from collections import namedtuple
+from pathlib import Path
+from typing import Iterable, List, Mapping, Optional, Sequence, Tuple
+from warnings import warn
+
 import numpy as np
 import scipy.stats as st
 from matplotlib import pyplot as plt
-from sklearn.metrics import roc_curve, roc_auc_score
-from warnings import warn
+from sklearn.metrics import roc_auc_score, roc_curve
 
 all = [
     "plot_roc_curve",

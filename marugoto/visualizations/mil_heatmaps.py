@@ -1,18 +1,20 @@
 # %%
 from enum import Enum, auto
-from typing import Mapping, Optional, Sequence, Tuple
-from fastai.vision.learner import load_learner
-import numpy as np
-from sklearn.preprocessing import OneHotEncoder
-import torch.nn as nn
-from marugoto.mil.data import get_target_enc
-from matplotlib.patches import Patch
-from scipy import interpolate
-import torch
 from pathlib import Path
-import matplotlib.pyplot as plt
-from PIL import Image
+from typing import Mapping, Optional, Sequence, Tuple
+
 import h5py
+import matplotlib.pyplot as plt
+import numpy as np
+import torch
+import torch.nn as nn
+from fastai.vision.learner import load_learner
+from matplotlib.patches import Patch
+from PIL import Image
+from scipy import interpolate
+from sklearn.preprocessing import OneHotEncoder
+
+from marugoto.mil.data import get_target_enc
 
 __all__ = ["plot_heatmaps_", "MapType"]
 # list of allowed formats for whole slide images
