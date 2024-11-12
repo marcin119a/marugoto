@@ -9,7 +9,6 @@ import torch.nn as nn
 import torchvision.transforms as transforms
 from matplotlib import pyplot as plt
 from PIL import Image
-from pydantic import NoneBytes
 
 # %%
 __all__ = ["plot_GCAM_from_csv_top_tiles_"]

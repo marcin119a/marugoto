@@ -9,7 +9,9 @@ An implementation of
 """
 
 from . import data, helpers, model
-from ._mil import *
+from ._mil import train, deploy
+
+__all__ = ["data", "helpers", "model", "train", "deploy"]
 
 __author__ = "Marko van Treeck"
 __copyright__ = "Copyright 2022, Kather Lab"

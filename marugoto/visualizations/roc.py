@@ -107,8 +107,10 @@ def plot_roc_curves(
 
     # calculate confidence intervals and print title
     aucs = [x.auc for x in tpas]
-    l, h = st.t.interval(0.95, len(aucs) - 1, loc=np.mean(aucs), scale=st.sem(aucs))
-    conf_range = (h - l) / 2
+    lower, upper = st.t.interval(
+        0.95, len(aucs) - 1, loc=np.mean(aucs), scale=st.sem(aucs)
+    )
+    conf_range = (upper - lower) / 2
     auc_str = f"AUC = ${np.mean(aucs):0.2f} \pm {conf_range:0.2f}$"
 
     if title:
@@ -116,7 +118,7 @@ def plot_roc_curves(
     else:
         ax.set_title(auc_str)
 
-    return l, h
+    return lower, upper
 
 
 def plot_rocs_for_subtypes(

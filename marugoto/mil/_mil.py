@@ -1,9 +1,7 @@
 import os
-from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Iterable, Optional, Sequence, Tuple, TypeVar
+from typing import Iterable, Optional, Sequence, Tuple, TypeVar
 
-import h5py
 import numpy as np
 import numpy.typing as npt
 import pandas as pd
@@ -18,7 +16,6 @@ from fastai.vision.all import (
     SaveModelCallback,
 )
 from torch import nn
-from torch.utils.data import Dataset
 
 from marugoto.data import SKLearnEncoder
 
@@ -88,7 +85,7 @@ def train(
     learn = Learner(dls, model, loss_func=loss_func, metrics=[RocAuc()], path=path)
 
     cbs = [
-        SaveModelCallback(fname=f"best_valid"),
+        SaveModelCallback(fname="best_valid"),
         CSVLogger(),
     ]
 

@@ -198,7 +198,7 @@ def train(
     learn = Learner(dls, model, loss_func=loss_func, metrics=[RocAuc()], path=path)
 
     cbs = [
-        SaveModelCallback(monitor="roc_auc_score", fname=f"best_valid"),
+        SaveModelCallback(monitor="roc_auc_score", fname="best_valid"),
         EarlyStoppingCallback(
             monitor="roc_auc_score", min_delta=0.01, patience=patience
         ),

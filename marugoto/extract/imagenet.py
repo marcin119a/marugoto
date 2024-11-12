@@ -30,7 +30,7 @@ import torchvision
 
 from .extract import extract_features_
 
-__all__ = ["extract_resnet18_imagenet_features"]
+__all__ = ["extract_resnet18_imagenet_features_"]
 
 
 def extract_resnet18_imagenet_features_(slide_tile_paths, **kwargs):
