@@ -46,7 +46,8 @@ def extract_ozanciga_features_(checkpoint_path: str, *args, **kwargs):
 
     model = torchvision.models.__dict__["resnet18"](pretrained=False)
 
-    state = torch.load(checkpoint_path)
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    state = torch.load(checkpoint_path, map_location=device)
 
     state_dict = state["state_dict"]
     for key in list(state_dict.keys()):

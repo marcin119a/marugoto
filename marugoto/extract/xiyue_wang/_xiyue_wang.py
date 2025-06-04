@@ -50,7 +50,9 @@ def extract_xiyuewang_features_(
     model = ResNet.resnet50(
         num_classes=128, mlp=False, two_branch=False, normlinear=True
     )
-    pretext_model = torch.load(checkpoint_path, map_location=torch.device('cpu'))
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+    pretext_model = torch.load(checkpoint_path, map_location=device)
     model.fc = nn.Identity()
     model.load_state_dict(pretext_model, strict=True)
 
