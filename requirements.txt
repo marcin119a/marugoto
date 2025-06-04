@@ -1,0 +1,7 @@
+tqdm
+h5py
+pandas
+torch
+scikit-learn
+torchvision
+fire

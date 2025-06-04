@@ -50,13 +50,13 @@ def extract_xiyuewang_features_(
     model = ResNet.resnet50(
         num_classes=128, mlp=False, two_branch=False, normlinear=True
     )
-    pretext_model = torch.load(checkpoint_path)
+    pretext_model = torch.load(checkpoint_path, map_location=torch.device('cpu'))
     model.fc = nn.Identity()
     model.load_state_dict(pretext_model, strict=True)
 
     return extract_features_(
         slide_tile_paths=slide_tile_paths,
-        model=model.cuda(),
+        model=model,
         model_name="xiyuewang-retcll-931956f3",
         **kwargs,
     )
